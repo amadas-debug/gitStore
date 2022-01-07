@@ -1,0 +1,20 @@
+
+<div *ngFor="let post of posts">
+  <div class="alert alert-secondary">ID:{{post.id}}</div>
+  <div class="text-danger">Title:{{post.title | uppercase }}}}</div>
+  <a [routerLink]="['/postsdetail',post.id]">
+    <span class="badge">{{post.id}}</span> {{post.title}}
+  </a>
+  <div class="text-danger">Body:{{post.body}}</div>
+  <br/>
+</div>
+
+
+<div *ngIf="messageService.messages.length">
+
+    <h2>Messages</h2>
+    <button class="clear"
+            (click)="messageService.clear()">clear</button>
+    <div *ngFor='let message of messageService.messages'> {{message}} </div>
+  
+</div>
